@@ -1,71 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Exercicio 10 </title>
-    <style>
-        table,
-        tr,
-        th,
-        td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            text-align: center;
-        }
-        tr:first-child {
-            font-weight: bolder;
-        }
-        td {
-            width: 10em
-        }
-    </style>
+	<meta http-equiv="Content-Language" content="pt-br">
+	<link href="style.css" rel="stylesheet">
+	<script src="jquery.min.js"></script>
+    <title>Exerccio 2</title>
 </head>
-
+<script>
+	$(document).ready(function(){
+		var jogo = new Array;
+		for(var i=0 ; i<6 ; i++){
+			var x =(Math.floor(Math.random()*60)+1);
+			if (jogo.includes(x)) i--;
+			else jogo[i] = x;
+		}
+		jogo.sort(function(a, b){return a-b});
+ 		$("#dot0").text(jogo[0]);
+		$("#dot1").text(jogo[1]);
+		$("#dot2").text(jogo[2]);
+		$("#dot3").text(jogo[3]);
+		$("#dot4").text(jogo[4]);
+		$("#dot5").text(jogo[5]);
+		$("#dot6").text(jogo[6]);
+	});
+</script>
 <body>
-
-        <br>
-        <P> Construa uma página web capaz de solicitar do usuário um valor inteiro positivo maior que
-                zero e em seguida o nome dele. Exiba no corpo do documento HTML o nome da pessoa
-                informado correspondente a quantidade de vezes informado por ele. Os nomes deverão ser
-                exibidos em linhas diferentes.
-        </P>
-        <br>
-
-    <table id="tabela"></table>
-    <script>
-        var numero = prompt("Digite um número positivo maior ou igual a dois")
-        
-        while (numero < 2 || Number.isInteger(numero)) {
-            alert("Erro ! Por favor digite novamente")
-            numero = prompt("Digite um número inteiro positivo maior que zero")
-        }
-        var tabela = document.getElementById("tabela")
-        var row = tabela.insertRow(0)
-        var coluna1 = row.insertCell(0)
-        var coluna2 = row.insertCell(1)
-        var coluna3 = row.insertCell(2)
-        coluna1.innerHTML = "Base decimal"
-        coluna2.innerHTML = "Base binária"
-        coluna3.innerHTML = "Base hexadecimal"
-        for (var i = 0; i <= numero; i++) {
-            var row = tabela.insertRow(i + 1)
-            var coluna1 = row.insertCell(0)
-            var coluna2 = row.insertCell(1)
-            var coluna3 = row.insertCell(2)
-            coluna1.innerHTML = i
-            coluna2.innerHTML = i.toString(2)
-            coluna3.innerHTML = i.toString(16).toUpperCase()
-        }
-    </script>
-
-     <p>
-       <b>Página de Referência</b>
-       
-       <a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_doc_write"> Referência</a>
-
-    </p>
-
+	<div style="text-align:center">
+		<h1>Numeros Sorteados da MegaSena</h1>
+		<p class="dot" id="dot0"></p>
+		<p class="dot" id="dot1"></p>
+		<p class="dot" id="dot2"></p>
+		<p class="dot" id="dot3"></p>
+		<p class="dot" id="dot4"></p>
+		<p class="dot" id="dot5"></p>
+	</div>
 </body>
-
 </html>

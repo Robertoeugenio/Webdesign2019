@@ -10,13 +10,11 @@
         var palavra1 = prompt("Digite a primeira palavra que tenha no texto:");
         var palavra2 = prompt("Digite a palavra para substituir :");
 		
-	
-
-        		
-		var texto = texto2.replace(palavra1, palavra2);
+		var padrao = new RegExp(palavra1, 'g')
+        texto = texto.replace(padrao, palavra2);
         alert(texto);
 
-          document.getElementById().innerHTML = texto;
+
 </script>
 </head>
 
