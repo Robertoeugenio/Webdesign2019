@@ -33,7 +33,7 @@
 </head>
 <script>
     $(document).ready(function () {
-        var sorteio = new Array;
+        var sorteio = new Array(6);
         for (var i = 0; i < 6; i++) {
             var x = (Math.floor(Math.random() * 60) + 1);
             if (sorteio.includes(x)) i--;

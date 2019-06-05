@@ -10,7 +10,7 @@
             background-color: greenyellow;
             font-size: 15px;
             padding: 1%;
-            font-family:'normal';
+            font-family: 'normal';
             box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);
         }
 
@@ -18,6 +18,7 @@
             text-align: center;
             width: 30%;
         }
+
         h3 {
             width: 30%;
         }
@@ -31,13 +32,22 @@
     </p>
 </head>
 <script>
+
+
     $(document).ready(function () {
-        var integrante = ['Roberto', 'Eloah', 'Sara', 'Karynne', 'Ana Clara', 'Billy', 'Lanck'];
+
+        var quantidade = prompt("digite o numero para sorteio");
+        var integrante = [];
+        for (var i = 0; i < quantidade; i++) {
+            integrante[i] = prompt("digite o integrante da pessoa");
+           
+        }
         integrante.sort(() => Math.random() - 0.5);
         $.each(integrante, function (index, value) {
             $("#mostraintegrante").append((index + 1) + "º  - " + value + '<hr>');
         });
     });
+
 </script>
 
 <body>
