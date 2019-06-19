@@ -6,9 +6,9 @@
     <title>Cronômetro</title>
     <script>
         var idSegundo;
-        var segundo = 0;
-        var minuto = 0;
-        var hora = 0;
+        var segundo = 00;
+        var minuto = 00;
+        var hora = 00;
         
 
 
@@ -48,7 +48,9 @@
         }
         function stopBtn() {
             clearTimeout(idSegundo);
-            idSegundo = 0; 
+            document.getElementById("segundo").innerHTML = segundo;
+            document.getElementById("minuto").innerHTML = minuto;
+            document.getElementById("hora").innerHTML = hora;
         }
     </script>
 </head>
