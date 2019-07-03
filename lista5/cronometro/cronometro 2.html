@@ -1,16 +1,15 @@
 
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cronometro versão</title>
+    <title>Document</title>
     
     <script>
         
-        var idSegundo;
+        var g_segundo;
         
-        function playBtn() {
+        function iniciar() {
             var segundo = parseFloat(document.getElementById("segundo").innerHTML);
             var minuto = parseFloat(document.getElementById("minuto").innerHTML);
             var hora = parseFloat(document.getElementById("hora").innerHTML);
@@ -36,17 +35,17 @@
                 document.getElementById("minuto").innerHTML = "0" + minuto;
             
             
-            document.getElementById("idSegundo").innerHTML = idSegundo;
+            document.getElementById("g_segundo").innerHTML = g_segundo;
             
-            idSegundo = setTimeout(iniciar,1000);
+            g_segundo = setTimeout(iniciar,1);
         }
         
-        function pauseBtn(){
-            clearTimeout(idSegundo);
+        function pause(){
+            clearTimeout(g_segundo);
         }
         
-        function stopBtn(){
-            clearTimeout(idSegundo);
+        function stop(){
+            clearTimeout(g_segundo);
             document.getElementById("segundo").innerHTML = "00";
             document.getElementById("minuto").innerHTML = "00";
             document.getElementById("hora").innerHTML = "00";
@@ -57,13 +56,14 @@
 <body>
   
   <p>Construir um cronômetro do tipo HH:MM:SS, contendo três botões "Play", "Pause" e "Stop". Dica: Utilize o conceito de temporizadores apresentado na última aula (setTimeout e clearTimeout). </p>
-  <input type="button" value=Play onclick="playBtn()">
-  <input type="button" value=Pause onclick="pauseBtn()">
-  <input type="button" value=Stop onclick="stopBtn()">
+  <input type="button" value=Play onclick="iniciar()">
+  <input type="button" value=Pause onclick="pause()">
+  <input type="button" value=Stop onclick="stop()">
   <br>
   <br>
   <label for="Cronometro"></label>
   <p><spam id="hora">00</spam>:<spam id="minuto">00</spam>:<spam id="segundo">00</spam></p><br>
+   <p>Lista o valor do g_segundo: <spam id="g_segundo"></spam></p>
     
 </body>
 </html>
